@@ -90,6 +90,25 @@ class LinkedList {
         printString += `( ${pointer.value} ) => null`;
         return printString
     }
+
+    insertAt(value, index) {
+        if (index === 0) {
+            this.prepend(value);
+            return
+        }
+        const newNode = new Node();
+        newNode.value = value;
+        let pointer = this.head;
+        let toPrecede;
+        for (let i = 0; i < index; i++) {
+            if (i === index - 1) {
+                toPrecede = pointer;
+            }
+            pointer = pointer.nextNode;
+        }
+        newNode.nextNode = pointer;
+        toPrecede.nextNode = newNode;
+    }
 }
 
 class Node {
@@ -107,4 +126,6 @@ for (value of values) {
     newLinkedList.append(value);
 }
 
-console.log(newLinkedList.contains(20));
+newLinkedList.insertAt('cat', 9);
+
+console.log(newLinkedList.toString());
