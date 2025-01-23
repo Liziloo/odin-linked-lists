@@ -53,6 +53,16 @@ class LinkedList {
         pointer.nextNode = null;
         this.tail = pointer;
     }
+
+    contains(value) {
+        let pointer = this.head;
+        if (pointer.value === value) {return true};
+        while (pointer.nextNode) {
+            pointer = pointer.nextNode;
+            if (pointer.value === value) {return true};
+        }
+        return false;
+    }
 }
 
 class Node {
