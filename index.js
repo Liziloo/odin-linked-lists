@@ -109,6 +109,22 @@ class LinkedList {
         newNode.nextNode = pointer;
         toPrecede.nextNode = newNode;
     }
+
+    removeAt(index) {
+        let pointer = this.head;
+        if (index === 0) {
+            this.head = pointer.nextNode;
+        } else {
+            let toPrecede;
+            for (let i = 0; i < index; i++) {
+                if (i === index - 1) {
+                    toPrecede = pointer;
+                }
+                pointer = pointer.nextNode;
+            }
+            toPrecede.nextNode = pointer.nextNode;
+        }   
+    }
 }
 
 class Node {
@@ -126,6 +142,6 @@ for (value of values) {
     newLinkedList.append(value);
 }
 
-newLinkedList.insertAt('cat', 9);
+newLinkedList.removeAt(8);
 
 console.log(newLinkedList.toString());
