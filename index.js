@@ -88,7 +88,7 @@ class LinkedList {
             pointer = pointer.nextNode;
         }
         printString += `( ${pointer.value} ) => null`;
-        console.log(printString);
+        return printString
     }
 }
 
@@ -107,4 +107,4 @@ for (value of values) {
     newLinkedList.append(value);
 }
 
-console.log(newLinkedList.tail);
+console.log(newLinkedList.contains(20));
