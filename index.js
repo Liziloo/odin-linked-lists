@@ -20,6 +20,8 @@ class LinkedList {
         newNode.value = value;
         if (this.head) {
             newNode.nextNode = this.head;
+        } else {
+            this.tail = newNode;
         }
         this.head = newNode;
     }
@@ -105,4 +107,4 @@ for (value of values) {
     newLinkedList.append(value);
 }
 
-newLinkedList.toString();
+console.log(newLinkedList.tail);
