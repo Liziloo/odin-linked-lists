@@ -77,6 +77,16 @@ class LinkedList {
         }
         if (pointer.value === value) {return i};
     }
+
+    toString() {
+        let pointer = this.head;
+        let printString = '';
+        while (pointer.nextNode) {
+            printString += `( ${pointer.value } ) => `
+        }
+        printString += 'null';
+        console.log(printString);
+    }
 }
 
 class Node {
