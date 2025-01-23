@@ -28,13 +28,30 @@ class LinkedList {
         let counter = 0;
         if (this.head) {
             counter++;
-            let current = this.head;
-            while (current.nextNode) {
+            let pointer = this.head;
+            while (pointer.nextNode) {
                 counter++;
-                current = current.nextNode;
+                pointer = pointer.nextNode;
             }
         }
         return counter;
+    }
+
+    at(index) {
+        let pointer = this.head;
+        for (let i = 0; i < index; i++) {
+            pointer = pointer.nextNode;
+        }
+        return pointer;
+    }
+
+    pop() {
+        let pointer = this.head;
+        while (pointer.nextNode !== this.tail) {
+            pointer = pointer.nextNode;
+        }
+        pointer.nextNode = null;
+        this.tail = pointer;
     }
 }
 
