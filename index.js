@@ -133,15 +133,3 @@ class Node {
         this.nextNode = null;
     }
 }
-
-const values = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-const newLinkedList = new LinkedList();
-
-for (value of values) {
-    newLinkedList.append(value);
-}
-
-newLinkedList.removeAt(8);
-
-console.log(newLinkedList.toString());
